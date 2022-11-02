@@ -24,3 +24,9 @@
   ansible.builtin.get_url:
     url: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
     dest: /tmp/mongodb.zip
+
+- name: Unarchive a mongodb file that is already on the remote machine
+  ansible.builtin.unarchive:
+    src: /tmp/mongodb.zip
+    dest: /tmp
+    remote_src: yes
