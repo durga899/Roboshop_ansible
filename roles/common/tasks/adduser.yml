@@ -28,3 +28,4 @@
     src: /home/roboshop/{{component}}-main/
     dest: /home/roboshop/{{component}}/
     remote_src: yes
+  become_user: roboshop
