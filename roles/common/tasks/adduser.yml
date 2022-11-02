@@ -16,6 +16,7 @@
   ansible.builtin.file:
     path: /home/roboshop/{{component}}
     state: directory
+  become_user: roboshop
     
 - name: Unarchive a {{component}} file that is already on the remote machine
   ansible.builtin.unarchive:
