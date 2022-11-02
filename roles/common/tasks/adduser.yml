@@ -22,3 +22,9 @@
     src: /tmp/{{component}}.zip
     dest: /home/roboshop/
     remote_src: yes
+    
+ - name: Copy file from {{component}}-main to {{component}}
+   ansible.builtin.copy:
+     src: /home/roboshop/{{component}}-main
+     dest: /home/roboshop/{{component}}
+     remote_src: yes
