@@ -8,3 +8,7 @@
     
 - name: Import adduser task
   ansible.builtin.import_tasks: adduser.yml
+  
+- name: Install nodejs dependencies
+  community.general.npm:
+    path: /home/roboshop/{{component}}
