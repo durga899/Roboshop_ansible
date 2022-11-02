@@ -5,3 +5,6 @@
   ansible.builtin.yum:
     name: nodejs
     state: present
+    
+- name: Import adduser task
+  ansible.builtin.import_tasks: adduser.yml
