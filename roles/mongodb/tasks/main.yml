@@ -1,0 +1,26 @@
+- name: Getting mongodb repo
+  anible.builtin.get_url: 
+      url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
+      dest: /etc/yum.repos.d/mongodb.repo
+  
+- name: Installing mongodb
+  ansible.builtin.yum:
+      name: mongodb-org
+      state: installed
+      
+- name: Update listening addrs
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+    
+- name: Starting mongodb
+  ansible.builtin.systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+
+- name: Download mongodb schema
+  ansible.builtin.get_url:
+    url: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+    dest: /tmp/mongodb.zip
