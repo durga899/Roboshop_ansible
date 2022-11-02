@@ -1,5 +1,5 @@
 - name: Getting mongodb repo
-  anible.builtin.get_url: 
+  ansible.builtin.get_url: 
       url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
       dest: /etc/yum.repos.d/mongodb.repo
   
