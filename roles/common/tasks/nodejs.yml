@@ -12,3 +12,4 @@
 - name: Install nodejs dependencies
   community.general.npm:
     path: /home/roboshop/{{component}}
+  become_user: roboshop
