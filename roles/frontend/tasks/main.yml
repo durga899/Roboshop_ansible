@@ -4,7 +4,7 @@
     state: present
 
 - name: Starting nginx
-  ansible.builtin.systemd:
+  ansible.builtin.service:
     state: started
     name: nginx
 
@@ -41,7 +41,7 @@
     dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Starting nginx
-  ansible.builtin.systemd:
+  ansible.builtin.service:
     state: restarted
     name: nginx
     enabled: yes
